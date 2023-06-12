@@ -1,0 +1,26 @@
+﻿@using BookStore.Service.Models;
+@model BookStore.Service.Models.BookDTO
+
+<div class="form-group">
+    <label asp-for="Name" class="control-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Writer" class="control-label"></label>
+    <input asp-for="Writer" class="form-control" />
+    <span asp-validation-for="Writer" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Year" class="control-label"></label>
+    <input asp-for="Year" class="form-control" />
+    <span asp-validation-for="Year" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="CategoryId" class="control-label"></label>
+    
+    <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(Model.CategoryList ,"Id","Name"))">
+        <option value="0">Seçiniz</option>
+    </select>
+    <span asp-validation-for="CategoryId" class="text-danger"></span>
+</div>
